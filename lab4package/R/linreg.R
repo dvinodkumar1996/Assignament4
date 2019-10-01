@@ -1,5 +1,5 @@
 #' A linear regression package in R.
-#' @description This package contains the code for Multiple Regression Model. A linreg function is created which takes two arguments and returns the object with of  RC class linreg.
+#' @description This class contains the code for Multiple Regression Model. A linreg function is created which takes two arguments and returns the object with of  RC class linreg.
 #' @param formula,data Takes in two parameters, formula takes an expression of formula data type and data takes an dataframe data type.
 #' @return Returns the object of linreg class.
 #' @export
@@ -99,18 +99,7 @@ linreg <- setRefClass("linreg",
                           dis <- c(round(beta_cap,digits = 2))
                           cat(row.names(beta_cap),"\n")
                           cat(dis)
-                          #trans_beta_cap <<- round(t(beta_cap),3)
-                          #row.names(trans_beta_cap) <<- ("")
-                          #base::print(trans_beta_cap)
-                          
-                          
-                          #vec_beta_cap <- set.names(c(beta_cap),c("(Intercept)","Speciesvercicolor","Speciesvirginia"))
-                          #names(vec_beta_cap) <- row.names(beta_cap)
-                          #vec_beta_cap
-                          #cat("\n Coefficients:\n", vec_beta_cap)
-                          
-                          
-                        },
+                          },
                         plot = function(){
                           plot1 <<- ggplot2::ggplot(data=data.frame(y_cap,e_cap),
                                                     ggplot2::aes(x= y_cap, y = e_cap)) +
@@ -146,8 +135,6 @@ linreg <- setRefClass("linreg",
                           
                         },
                         summary = function(){
-                          
-                          
                           cat("Call:\n",form)
                           cat(sep = "\n")
                           cat(sep = "\n")
@@ -165,8 +152,6 @@ linreg <- setRefClass("linreg",
                           cat(sep = "\n")
                           cat("Residual standard error:", resid_std_err, "on", d_o_f, "degrees of freedom")
                           cat(sep = "\n")
-                          
-                          
                         }
                       ))
 
