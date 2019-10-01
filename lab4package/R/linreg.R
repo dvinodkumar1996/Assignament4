@@ -2,7 +2,7 @@
 #' @description This class contains the code for Multiple Regression Model. A linreg function is created which takes two arguments and returns the object with of  RC class linreg.
 #' @param formula,data Takes in two parameters, formula takes an expression of formula data type and data takes an dataframe data type.
 #' @return Returns the object of linreg class.
-#' @export
+#' @export linreg
 
 
 linreg <- setRefClass("linreg",
@@ -155,6 +155,5 @@ linreg <- setRefClass("linreg",
                         }
                       ))
 
-testi<-linreg$new(Petal.Length~Species,iris)
-testi$print()
+
 
